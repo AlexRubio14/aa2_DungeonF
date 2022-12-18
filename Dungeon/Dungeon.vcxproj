@@ -142,8 +142,8 @@
     <ClInclude Include="Enemy.h" />
     <ClInclude Include="Header.h" />
     <ClInclude Include="Map.h" />
-    <ClInclude Include="MapPosition.h" />
     <ClInclude Include="Player.h" />
+    <ClInclude Include="Random.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -1,5 +1,7 @@
 #pragma once
+#include "Random.h"
 
-#include "Header.h"
-
-//void PrintMap(Player link, Enemy e[]);
+struct MapPosition {
+    int x;
+    int y;
+};

@@ -1,6 +1,10 @@
 #pragma once
-#include "Header.h"
+#include <iostream>
+#include <fstream>
 #include "Player.h"
 #include "Enemy.h"
+
 using namespace std;
-int barres(int primeraBarra, int segonaBarra);
+
+int Barres(int primeraBarra, int segonaBarra);
+void DrawEnemy(int draw);

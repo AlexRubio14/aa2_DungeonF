@@ -1,7 +1,8 @@
 #pragma once
-#include "Header.h"
-#include "MapPosition.h"
-struct Player {
+#include "Map.h"
+
+struct Player 
+{
     MapPosition position;
     int gold;
 
@@ -19,13 +20,8 @@ struct Player {
     int maxPotion;
 
     bool isAlive;
+
     void Init();
 };
 
-void DrinkPotion(Player& link) {
-    link.health += link.maxHealth * 0.4;
-    if (link.health > link.maxHealth) {
-        link.health = link.maxHealth;
-    }
-    link.potions--;
-}
+void DrinkPotion(Player& link);

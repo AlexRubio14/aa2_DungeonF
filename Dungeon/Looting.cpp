@@ -1,6 +1,14 @@
 #include "Chests.h"
 
-void Chest::looting::InitLooting()
+void Chest::Init() 
+{
+	position.x = RandomNumber(0, 4);
+	position.y = RandomNumber(0, 4);
+
+	gold = RandomNumber(50, 200);
+}
+
+void Chest::looting::Init()
 {
 	looting triforce, tunic, masterSword, shield, minishCap, epona, brokenLeaf, majorasMask, navi, bomb;
 

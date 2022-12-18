@@ -1,7 +1,11 @@
 #pragma once
-#include "Header.h"
+#include "Map.h"
+
+
 struct Chest
 {
+	MapPosition position;
+
 	bool looted;
 	int gold; //pot tenir entre 50 - 200
 	bool potion;
@@ -13,6 +17,7 @@ struct Chest
 		int agility;
 		int attack;
 
-		void InitLooting();
+		void Init();
 	};
+	void Init();
 };

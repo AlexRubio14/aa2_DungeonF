@@ -1,23 +1,23 @@
 #include "Combat.h"
 
-
-
-void PlayCombat(Player& link, Enemy& goblin) {
+void PlayCombat(Player& link, Enemy goblin) {
 
 	int pAttack, pStaminaUsed = 0;
 	int eAttack = RandomNumber(goblin.maxStamina % 20,goblin.stamina), eStaminaUsed = 0;
+	int drawing = RandomNumber(0, 1);
 
 	while (link.isAlive && goblin.isAlive) {
 
 		printf_s("----- COMBAT -----\n\n\n ---- Player ---- \n\n");
 
-		barres(link.health, link.maxHealth);
-		barres(link.stamina, link.maxStamina);
+		Barres(link.health, link.maxHealth);
+		Barres(link.stamina, link.maxStamina);
 
-		printf("\nPotions % d / 3\n\n-----------------------------\n\n ---- Enemy ----\n\n", link.potions);
+		printf("\nPotions % d / 3\n\n-----------------------------\n\n", link.potions);
+		DrawEnemy(drawing);
 
-		barres(goblin.health, goblin.maxHealth);
-		barres(goblin.stamina, goblin.maxStamina);
+		Barres(goblin.health, goblin.maxHealth);
+		Barres(goblin.stamina, goblin.maxStamina);
 
 		printf("-----------------------------\n\n A--> Attack\n D --> Defend\n R --> Rest\n P --> Potion \n\n Enter your action: ");
 
@@ -68,13 +68,11 @@ void PlayCombat(Player& link, Enemy& goblin) {
 				pStaminaUsed = pAttack * 0.75;
 				printf("The enemy blocks your attack, receiving only %d damage\n", pStaminaUsed);
 			}
-
 			else if (eAction == 'R') { // l'enemic descansa
 				goblin.stamina = goblin.maxStamina;
 				goblin.health -= pAttack;
 				link.stamina -= pAttack;
 				printf("You strike the unpreparaed enemy dealing %d damage\n", pAttack);
-
 			}
 			break;
 
@@ -171,7 +169,7 @@ void PlayCombat(Player& link, Enemy& goblin) {
 	system("cls");
 }
 
-int barres(int primeraBarra, int segonaBarra) {
+int Barres(int primeraBarra, int segonaBarra) {
 	int digits;
 	digits = (primeraBarra * 10 / segonaBarra);
 	printf("[");
@@ -183,7 +181,25 @@ int barres(int primeraBarra, int segonaBarra) {
 	return 0;
 }
 
-
+void DrawEnemy(int draw)
+{
+	if (draw == 0)
+	{
+		printf(" ---- Goblin Radev ----\n");
+		printf("      ___  \n");
+		printf("     |._.|  \n");
+		printf("    __|  |__ \n");
+		printf("   |  |__|  |\n");
+		printf("    _|    |_  \n\n");
+	}
+	else
+	{
+		printf(" ---- Radev Mug's ----\n");
+		printf("   _|     | \n");
+		printf("  (_| T_T | \n");
+		printf("    |_____| \n\n");
+	}
+}
 
 
 

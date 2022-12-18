@@ -1,6 +1,5 @@
 #pragma once
-#include "Header.h"
-#include "MapPosition.h"
+#include "Map.h"
 
 struct Enemy {
     MapPosition position;

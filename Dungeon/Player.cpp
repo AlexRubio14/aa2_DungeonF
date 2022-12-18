@@ -1,15 +1,17 @@
 #include "Player.h"
 
-void Player::Init() {
+void Player::Init() 
+{
+    Player link;
     position.x = 2;
     position.y = 3;
 
     gold = 0;
 
-    maxHealth = RandomBetweenRange(90, 110);
+    maxHealth = RandomNumber(90, 110);
     health = maxHealth;
 
-    maxStamina = RandomBetweenRange(90, 110);
+    maxStamina = RandomNumber(90, 110);
     stamina = maxStamina;
 
     maxAgility = 3;
@@ -19,4 +21,12 @@ void Player::Init() {
     maxPotion = 3;
     potions = maxPotion;
     isAlive = true;
+}
+
+void DrinkPotion(Player& link) {
+    link.health += link.maxHealth * 0.4;
+    if (link.health > link.maxHealth) {
+        link.health = link.maxHealth;
+    }
+    link.potions--;
 }

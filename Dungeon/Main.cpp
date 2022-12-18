@@ -1,6 +1,4 @@
 #include "Header.h"
-#include "Enemy.h"
-#include "Player.h"
 
 enum Scene { START, NAVIGATION, COMBAT, LOOTING, GAMEOVER };
 
@@ -8,11 +6,13 @@ int main()
 {
 	srand(time(NULL));
 
-	Scene currentScene = START;
+	Scene currentScene = NAVIGATION;
 	bool isPlaying = true;
+
 	Player link;
 	link.Init();
 	Enemy goblin[5];
+	//Chest cofre[2];
 
 	char playerAction;
 
@@ -21,14 +21,16 @@ int main()
 		switch (currentScene)
 		{
 		case START:
+		
 			//afegir tota la introducció del joc
 			//currentScene = NAVIGATION;
 			//system("cls"); //netejar la consola
 			break;
 		case NAVIGATION:
-			//PrintMap(link, goblin);
+			
+			PrintMap (link, goblin);
 			//introduir tot el mapa
-			//el mapejat dels objectes, enemics.....
+			//el mapejat dels objectes, enemics...
 			//moviment
 			//if per entrar als diversos escenaris
 			//currentScene = LOOTING; //agafa cofre
@@ -51,4 +53,9 @@ int main()
 			break;
 		}
 	}
+}
+
+int RandomNumber(int min, int max)
+{
+	return rand() % (max - min + 1) + min;
 }
