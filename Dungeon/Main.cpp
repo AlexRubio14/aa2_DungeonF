@@ -28,7 +28,7 @@ int main()
 		case NAVIGATION:
 			//PrintMap(link, goblin);
 			//introduir tot el mapa
-			//el mapejat dels objectes, enemics...
+			//el mapejat dels objectes, enemics.....
 			//moviment
 			//if per entrar als diversos escenaris
 			//currentScene = LOOTING; //agafa cofre

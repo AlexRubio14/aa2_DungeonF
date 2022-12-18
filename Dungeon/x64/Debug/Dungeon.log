@@ -1,28 +1,33 @@
 ﻿  Combat.cpp
-C:\Users\alexr\source\repos\aa2_DungeonF\Dungeon\Player.h(26,35): warning C4244: '+=': conversión de 'double' a 'int'; posible pérdida de datos
-C:\Users\alexr\source\repos\aa2_DungeonF\Dungeon\Combat.cpp(65,38): warning C4244: '+=': conversión de 'double' a 'int'; posible pérdida de datos
-C:\Users\alexr\source\repos\aa2_DungeonF\Dungeon\Combat.cpp(66,30): warning C4244: '-=': conversión de 'double' a 'int'; posible pérdida de datos
-C:\Users\alexr\source\repos\aa2_DungeonF\Dungeon\Combat.cpp(68,28): warning C4244: '=': conversión de 'double' a 'int'; posible pérdida de datos
-C:\Users\alexr\source\repos\aa2_DungeonF\Dungeon\Combat.cpp(84,34): warning C4244: '+=': conversión de 'double' a 'int'; posible pérdida de datos
-C:\Users\alexr\source\repos\aa2_DungeonF\Dungeon\Combat.cpp(85,29): warning C4244: '-=': conversión de 'double' a 'int'; posible pérdida de datos
-C:\Users\alexr\source\repos\aa2_DungeonF\Dungeon\Combat.cpp(87,37): warning C4244: '=': conversión de 'double' a 'int'; posible pérdida de datos
-C:\Users\alexr\source\repos\aa2_DungeonF\Dungeon\Combat.cpp(92,38): warning C4244: '+=': conversión de 'double' a 'int'; posible pérdida de datos
-C:\Users\alexr\source\repos\aa2_DungeonF\Dungeon\Combat.cpp(93,34): warning C4244: '+=': conversión de 'double' a 'int'; posible pérdida de datos
-C:\Users\alexr\source\repos\aa2_DungeonF\Dungeon\Combat.cpp(98,34): warning C4244: '+=': conversión de 'double' a 'int'; posible pérdida de datos
-C:\Users\alexr\source\repos\aa2_DungeonF\Dungeon\Combat.cpp(115,38): warning C4244: '+=': conversión de 'double' a 'int'; posible pérdida de datos
-C:\Users\alexr\source\repos\aa2_DungeonF\Dungeon\Combat.cpp(138,43): warning C4244: '=': conversión de 'double' a 'int'; posible pérdida de datos
-C:\Users\alexr\source\repos\aa2_DungeonF\Dungeon\Combat.cpp(145,38): warning C4244: '+=': conversión de 'double' a 'int'; posible pérdida de datos
+C:\Users\alexr\source\repos\aa2_Dungeon\Dungeon\Player.h(26,35): warning C4244: '+=': conversión de 'double' a 'int'; posible pérdida de datos
+C:\Users\alexr\source\repos\aa2_Dungeon\Dungeon\Combat.cpp(65,38): warning C4244: '+=': conversión de 'double' a 'int'; posible pérdida de datos
+C:\Users\alexr\source\repos\aa2_Dungeon\Dungeon\Combat.cpp(66,30): warning C4244: '-=': conversión de 'double' a 'int'; posible pérdida de datos
+C:\Users\alexr\source\repos\aa2_Dungeon\Dungeon\Combat.cpp(68,28): warning C4244: '=': conversión de 'double' a 'int'; posible pérdida de datos
+C:\Users\alexr\source\repos\aa2_Dungeon\Dungeon\Combat.cpp(84,34): warning C4244: '+=': conversión de 'double' a 'int'; posible pérdida de datos
+C:\Users\alexr\source\repos\aa2_Dungeon\Dungeon\Combat.cpp(85,29): warning C4244: '-=': conversión de 'double' a 'int'; posible pérdida de datos
+C:\Users\alexr\source\repos\aa2_Dungeon\Dungeon\Combat.cpp(87,37): warning C4244: '=': conversión de 'double' a 'int'; posible pérdida de datos
+C:\Users\alexr\source\repos\aa2_Dungeon\Dungeon\Combat.cpp(92,38): warning C4244: '+=': conversión de 'double' a 'int'; posible pérdida de datos
+C:\Users\alexr\source\repos\aa2_Dungeon\Dungeon\Combat.cpp(93,34): warning C4244: '+=': conversión de 'double' a 'int'; posible pérdida de datos
+C:\Users\alexr\source\repos\aa2_Dungeon\Dungeon\Combat.cpp(98,34): warning C4244: '+=': conversión de 'double' a 'int'; posible pérdida de datos
+C:\Users\alexr\source\repos\aa2_Dungeon\Dungeon\Combat.cpp(115,38): warning C4244: '+=': conversión de 'double' a 'int'; posible pérdida de datos
+C:\Users\alexr\source\repos\aa2_Dungeon\Dungeon\Combat.cpp(138,43): warning C4244: '=': conversión de 'double' a 'int'; posible pérdida de datos
+C:\Users\alexr\source\repos\aa2_Dungeon\Dungeon\Combat.cpp(145,38): warning C4244: '+=': conversión de 'double' a 'int'; posible pérdida de datos
+  Enemy.cpp
+  Looting.cpp
+  GameOver.cpp
   Main.cpp
-C:\Users\alexr\source\repos\aa2_DungeonF\Dungeon\Player.h(26,35): warning C4244: '+=': conversión de 'double' a 'int'; posible pérdida de datos
-C:\Users\alexr\source\repos\aa2_DungeonF\Dungeon\Main.cpp(9,12): warning C4244: 'argumento': conversión de 'time_t' a 'unsigned int'; posible pérdida de datos
-C:\Users\alexr\source\repos\aa2_DungeonF\Dungeon\Main.cpp(17,7): warning C4101: 'playerAction': variable local sin referencia
-C:\Users\alexr\source\repos\aa2_DungeonF\Dungeon\Main.cpp(15,8): warning C4101: 'goblin': variable local sin referencia
+C:\Users\alexr\source\repos\aa2_Dungeon\Dungeon\Player.h(26,35): warning C4244: '+=': conversión de 'double' a 'int'; posible pérdida de datos
+C:\Users\alexr\source\repos\aa2_Dungeon\Dungeon\Main.cpp(9,12): warning C4244: 'argumento': conversión de 'time_t' a 'unsigned int'; posible pérdida de datos
+C:\Users\alexr\source\repos\aa2_Dungeon\Dungeon\Main.cpp(17,7): warning C4101: 'playerAction': variable local sin referencia
+C:\Users\alexr\source\repos\aa2_Dungeon\Dungeon\Main.cpp(15,8): warning C4101: 'goblin': variable local sin referencia
+  Map.cpp
   Player.cpp
-C:\Users\alexr\source\repos\aa2_DungeonF\Dungeon\Player.h(26,35): warning C4244: '+=': conversión de 'double' a 'int'; posible pérdida de datos
+C:\Users\alexr\source\repos\aa2_Dungeon\Dungeon\Player.h(26,35): warning C4244: '+=': conversión de 'double' a 'int'; posible pérdida de datos
+  Start.cpp
   Generando código...
 Main.obj : error LNK2005: ya se definió "void __cdecl DrinkPotion(struct Player &)" (?DrinkPotion@@YAXAEAUPlayer@@@Z) en Combat.obj
 Player.obj : error LNK2005: ya se definió "void __cdecl DrinkPotion(struct Player &)" (?DrinkPotion@@YAXAEAUPlayer@@@Z) en Combat.obj
 Combat.obj : error LNK2019: símbolo externo "int __cdecl RandomNumber(int,int)" (?RandomNumber@@YAHHH@Z) sin resolver al que se hace referencia en la función "void __cdecl PlayCombat(struct Player &,struct Enemy &)" (?PlayCombat@@YAXAEAUPlayer@@AEAUEnemy@@@Z)
 Enemy.obj : error LNK2019: símbolo externo "int __cdecl RandomBetweenRange(int,int)" (?RandomBetweenRange@@YAHHH@Z) sin resolver al que se hace referencia en la función "public: void __cdecl Enemy::Initialize(void)" (?Initialize@Enemy@@QEAAXXZ)
 Player.obj : error LNK2001: símbolo externo "int __cdecl RandomBetweenRange(int,int)" (?RandomBetweenRange@@YAHHH@Z) sin resolver
-C:\Users\alexr\source\repos\aa2_DungeonF\x64\Debug\Dungeon.exe : fatal error LNK1120: 2 externos sin resolver
+C:\Users\alexr\source\repos\aa2_Dungeon\x64\Debug\Dungeon.exe : fatal error LNK1120: 2 externos sin resolver
