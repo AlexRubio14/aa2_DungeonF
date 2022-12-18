@@ -1,6 +1,6 @@
 #include "Enemy.h"
 
-void Enemy::Initialize() {
+void Enemy::Init() {
 
     position.x = RandomNumber(0, 4);
     position.y = RandomNumber(0, 4);

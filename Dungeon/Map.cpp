@@ -1,7 +1,8 @@
 #include "Header.h"
 
-void PrintMap(Player& link, Enemy e[]) {
+void PrintMap(Player& link, Enemy goblin[]) {
    
+    
     // TOP PART
     printf("------ DUNGEON ------\n\nE -> Enemy    P -> Player    C -> Chest\n\nHealth: %d / %d\nPotion: %d / %d\nMoves: %d / %d\n\n", 
         link.health, link.maxHealth, link.potions, link.maxPotion, link.agility, link.maxAgility);
@@ -15,6 +16,7 @@ void PrintMap(Player& link, Enemy e[]) {
     //PRINT ROWS
     for (int i = 0; i < NUM_ROWS; i++)
     {
+     
         //TOP PART
         for (int j = 0; j < NUM_COLUMS; j++)
         {
@@ -25,19 +27,12 @@ void PrintMap(Player& link, Enemy e[]) {
         for (int j = 0; j < NUM_COLUMS; j++)
         {
             bool enemyFound = false, chestFound = false;
-            
-            //DECLARAR QUE HI HA 5 ENEMICS
-            for (int k = 0; k < 5; k++) 
+            for (int k = 0; k < 5; k++)
             {
-                //si el enemigo encaja con el player se recoloca su posicion
-                if (e[k].position.x == link.position.x && e[k].position.y == link.position.y)
-                {
-                    e[k].position.x = RandomNumber(0, 4);
-                    e[k].position.y = RandomNumber(0, 4);
-                }
-                if (e[k].position.x == j && e[k].position.y == i)
+                if (goblin[k].position.x == j && goblin[k].position.y == i)
                     enemyFound = true;
             }
+           
             //DECLARAR QUE HI HA 2 COFRES // sense comprobar si funciona
             /*for (int k = 0; k < 2; k++)
             {
@@ -56,9 +51,9 @@ void PrintMap(Player& link, Enemy e[]) {
 
             if (link.position.x == j && link.position.y == i)
                 printf("| P |");
-            else if (enemyFound == true)
+            else if (enemyFound)
                 printf("| E |");
-            else if (chestFound == true)
+            else if (chestFound)
                 printf("| C |");
             else
                 printf("|   |");
@@ -74,3 +69,4 @@ void PrintMap(Player& link, Enemy e[]) {
     printf("_________________________\n\nW A S D -> Move\nP -> Potion\n\nEnter your action: ");
     system("pause");
 }
+

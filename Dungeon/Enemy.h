@@ -12,5 +12,5 @@ struct Enemy {
     int stamina;
     int maxStamina;
 
-    void Initialize();
+    void Init();
 };

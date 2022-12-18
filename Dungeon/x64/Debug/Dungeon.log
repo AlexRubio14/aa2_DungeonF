@@ -1,22 +1,6 @@
-﻿  Combat.cpp
-C:\Users\jespi\OneDrive\Escritorio\aa2_DungeonF\Dungeon\Combat.cpp(65,38): warning C4244: '+=': conversión de 'double' a 'int'; posible pérdida de datos
-C:\Users\jespi\OneDrive\Escritorio\aa2_DungeonF\Dungeon\Combat.cpp(66,30): warning C4244: '-=': conversión de 'double' a 'int'; posible pérdida de datos
-C:\Users\jespi\OneDrive\Escritorio\aa2_DungeonF\Dungeon\Combat.cpp(68,28): warning C4244: '=': conversión de 'double' a 'int'; posible pérdida de datos
-C:\Users\jespi\OneDrive\Escritorio\aa2_DungeonF\Dungeon\Combat.cpp(82,34): warning C4244: '+=': conversión de 'double' a 'int'; posible pérdida de datos
-C:\Users\jespi\OneDrive\Escritorio\aa2_DungeonF\Dungeon\Combat.cpp(83,29): warning C4244: '-=': conversión de 'double' a 'int'; posible pérdida de datos
-C:\Users\jespi\OneDrive\Escritorio\aa2_DungeonF\Dungeon\Combat.cpp(85,37): warning C4244: '=': conversión de 'double' a 'int'; posible pérdida de datos
-C:\Users\jespi\OneDrive\Escritorio\aa2_DungeonF\Dungeon\Combat.cpp(90,38): warning C4244: '+=': conversión de 'double' a 'int'; posible pérdida de datos
-C:\Users\jespi\OneDrive\Escritorio\aa2_DungeonF\Dungeon\Combat.cpp(91,34): warning C4244: '+=': conversión de 'double' a 'int'; posible pérdida de datos
-C:\Users\jespi\OneDrive\Escritorio\aa2_DungeonF\Dungeon\Combat.cpp(96,34): warning C4244: '+=': conversión de 'double' a 'int'; posible pérdida de datos
-C:\Users\jespi\OneDrive\Escritorio\aa2_DungeonF\Dungeon\Combat.cpp(113,38): warning C4244: '+=': conversión de 'double' a 'int'; posible pérdida de datos
-C:\Users\jespi\OneDrive\Escritorio\aa2_DungeonF\Dungeon\Combat.cpp(136,43): warning C4244: '=': conversión de 'double' a 'int'; posible pérdida de datos
-C:\Users\jespi\OneDrive\Escritorio\aa2_DungeonF\Dungeon\Combat.cpp(143,38): warning C4244: '+=': conversión de 'double' a 'int'; posible pérdida de datos
-  Main.cpp
-C:\Users\jespi\OneDrive\Escritorio\aa2_DungeonF\Dungeon\Main.cpp(7,12): warning C4244: 'argumento': conversión de 'time_t' a 'unsigned int'; posible pérdida de datos
-C:\Users\jespi\OneDrive\Escritorio\aa2_DungeonF\Dungeon\Main.cpp(17,7): warning C4101: 'playerAction': variable local sin referencia
+﻿  Main.cpp
+C:\Users\alexr\source\repos\aa2_Dungeon\Dungeon\Main.cpp(7,12): warning C4244: 'argumento': conversión de 'time_t' a 'unsigned int'; posible pérdida de datos
+C:\Users\alexr\source\repos\aa2_Dungeon\Dungeon\Main.cpp(19,7): warning C4101: 'playerAction': variable local sin referencia
   Map.cpp
-  Player.cpp
-C:\Users\jespi\OneDrive\Escritorio\aa2_DungeonF\Dungeon\Player.cpp(5,12): warning C4101: 'link': variable local sin referencia
-C:\Users\jespi\OneDrive\Escritorio\aa2_DungeonF\Dungeon\Player.cpp(27,35): warning C4244: '+=': conversión de 'double' a 'int'; posible pérdida de datos
   Generando código...
-  Dungeon.vcxproj -> C:\Users\jespi\OneDrive\Escritorio\aa2_DungeonF\x64\Debug\Dungeon.exe
+  Dungeon.vcxproj -> C:\Users\alexr\source\repos\aa2_Dungeon\x64\Debug\Dungeon.exe

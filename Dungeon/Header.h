@@ -12,6 +12,7 @@ using namespace std;
 
 int Barres(int primeraBarra, int segonaBarra);
 void PrintMap(Player& link, Enemy e[]);
+void CreateEnemies(Player& link, Enemy goblin[]);
 
 //system("pause");
 //system("cls");
