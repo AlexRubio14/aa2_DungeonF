@@ -9,10 +9,12 @@
 #define NUM_ROWS 5
 
 using namespace std;
+enum Scene;
 
 int Barres(int primeraBarra, int segonaBarra);
-void PrintMap(Player& link, Enemy goblin[]);
-void MoveAction(char action, Player& link, Enemy goblin[]);
+void PrintMap(Player& link, Enemy goblin[], Chest cofre[]);
+void MoveAction(char action, Player& link, Enemy goblin[], Chest cofre[]);
+void ChestFounded(Player& link, Chest cofre[]);
 
 
 //system("pause");

@@ -1,5 +1,6 @@
 #pragma once
 #include "Map.h"
+#include "Player.h"
 
 
 struct Chest
@@ -21,3 +22,4 @@ struct Chest
 	};
 	void Init();
 };
+void CrearCofres(Player& link, Chest cofre[]);

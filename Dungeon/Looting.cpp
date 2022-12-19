@@ -1,4 +1,5 @@
 #include "Chests.h"
+#include "Player.h"
 
 void Chest::Init() 
 {
@@ -72,3 +73,27 @@ void Chest::looting::Init()
 	bomb.agility = 0;
 	bomb.attack = 0;
 }
+
+void CrearCofres(Player& link, Chest cofre[]) {
+	//for (int c = 0; c < 2; c++)
+	//{
+	for (int c = 0; c < 5; c++)
+	{
+		if (cofre[c].position.x == link.position.x && cofre[c].position.y == link.position.y)
+		{
+			cofre[c].position.x = RandomNumber(0, 4);
+			cofre[c].position.y = RandomNumber(0, 4);
+		}
+		for (int z = 1; z < 5; z++)
+		{
+			if (cofre[c].position.x == cofre[c - z].position.x && cofre[c].position.y == cofre[c - c].position.y)
+			{
+				cofre[c].position.x = RandomNumber(0, 4);
+				cofre[c].position.y = RandomNumber(0, 4);
+			}
+		}
+	}
+}
+		//if (cofre[c].position.x == j && cofre[c].position.y == i)
+			//chestFound = true;
+	//}
