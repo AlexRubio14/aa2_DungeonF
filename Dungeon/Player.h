@@ -12,9 +12,9 @@ struct Player
     int stamina;
     int maxStamina;
 
-    int agility;
-    int maxAgility;
-    int currentAgility;
+    int moves;
+    int maxMoves;
+    int currentMoves;
 
     int potions;
     int maxPotion;

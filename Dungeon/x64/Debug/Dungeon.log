@@ -1,20 +1,6 @@
-﻿  Combat.cpp
-C:\Users\RUBIOPLANAALEJANDRO\Desktop\aa2_DungeonF\Dungeon\Combat.cpp(65,38): warning C4244: '+=': conversion from 'double' to 'int', possible loss of data
-C:\Users\RUBIOPLANAALEJANDRO\Desktop\aa2_DungeonF\Dungeon\Combat.cpp(66,30): warning C4244: '-=': conversion from 'double' to 'int', possible loss of data
-C:\Users\RUBIOPLANAALEJANDRO\Desktop\aa2_DungeonF\Dungeon\Combat.cpp(68,28): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
-C:\Users\RUBIOPLANAALEJANDRO\Desktop\aa2_DungeonF\Dungeon\Combat.cpp(82,34): warning C4244: '+=': conversion from 'double' to 'int', possible loss of data
-C:\Users\RUBIOPLANAALEJANDRO\Desktop\aa2_DungeonF\Dungeon\Combat.cpp(83,29): warning C4244: '-=': conversion from 'double' to 'int', possible loss of data
-C:\Users\RUBIOPLANAALEJANDRO\Desktop\aa2_DungeonF\Dungeon\Combat.cpp(85,37): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
-C:\Users\RUBIOPLANAALEJANDRO\Desktop\aa2_DungeonF\Dungeon\Combat.cpp(90,38): warning C4244: '+=': conversion from 'double' to 'int', possible loss of data
-C:\Users\RUBIOPLANAALEJANDRO\Desktop\aa2_DungeonF\Dungeon\Combat.cpp(91,34): warning C4244: '+=': conversion from 'double' to 'int', possible loss of data
-C:\Users\RUBIOPLANAALEJANDRO\Desktop\aa2_DungeonF\Dungeon\Combat.cpp(96,34): warning C4244: '+=': conversion from 'double' to 'int', possible loss of data
-C:\Users\RUBIOPLANAALEJANDRO\Desktop\aa2_DungeonF\Dungeon\Combat.cpp(113,38): warning C4244: '+=': conversion from 'double' to 'int', possible loss of data
-C:\Users\RUBIOPLANAALEJANDRO\Desktop\aa2_DungeonF\Dungeon\Combat.cpp(136,43): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
-C:\Users\RUBIOPLANAALEJANDRO\Desktop\aa2_DungeonF\Dungeon\Combat.cpp(143,38): warning C4244: '+=': conversion from 'double' to 'int', possible loss of data
-  Main.cpp
-C:\Users\RUBIOPLANAALEJANDRO\Desktop\aa2_DungeonF\Dungeon\Main.cpp(7,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-C:\Users\RUBIOPLANAALEJANDRO\Desktop\aa2_DungeonF\Dungeon\Main.cpp(35,26): error C2664: 'void PrintMap(Player &,Enemy [])': cannot convert argument 2 from 'Enemy' to 'Enemy []'
-C:\Users\RUBIOPLANAALEJANDRO\Desktop\aa2_DungeonF\Dungeon\Main.cpp(35,20): message : No user-defined-conversion operator available that can perform this conversion, or the operator cannot be called
-C:\Users\RUBIOPLANAALEJANDRO\Desktop\aa2_DungeonF\Dungeon\Header.h(14,6): message : see declaration of 'PrintMap'
-  MapMarcos.cpp
-  Generating Code...
+﻿  Main.cpp
+C:\Users\jespi\OneDrive\Escritorio\aa2_DungeonF\aa2_DungeonF\Dungeon\Main.cpp(8,12): warning C4244: 'argumento': conversión de 'time_t' a 'unsigned int'; posible pérdida de datos
+C:\Users\jespi\OneDrive\Escritorio\aa2_DungeonF\aa2_DungeonF\Dungeon\Main.cpp(20,7): warning C4101: 'playerAction': variable local sin referencia
+  Map.cpp
+  Generando código...
+  Dungeon.vcxproj -> C:\Users\jespi\OneDrive\Escritorio\aa2_DungeonF\aa2_DungeonF\x64\Debug\Dungeon.exe

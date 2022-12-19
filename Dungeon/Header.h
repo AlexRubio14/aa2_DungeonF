@@ -11,9 +11,9 @@
 using namespace std;
 
 int Barres(int primeraBarra, int segonaBarra);
-void PrintMap(Player& link, Enemy e[]);
+void PrintMap(Player& link, Enemy goblin[]);
 void MoveAction(char action, Player& link, Enemy goblin[]);
-void CreateEnemies(Player& link, Enemy goblin[]);
+
 
 //system("pause");
 //system("cls");

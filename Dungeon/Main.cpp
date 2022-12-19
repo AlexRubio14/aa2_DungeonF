@@ -6,14 +6,13 @@ int main()
 {
 	char action;
 	srand(time(NULL));
+
 	Player link;
 	link.Init();
-	int totalGoblins = RandomNumber(5, 7);
-	Enemy goblin[7];
-	for (int i = 0; i < 7; i++)
-		goblin[i].Init();
 
-	Scene currentScene = COMBAT;
+	Enemy goblin[5];
+
+	Scene currentScene = NAVIGATION;
 	bool isPlaying = true;
 
 	//Chest cofre[2];
@@ -33,8 +32,8 @@ int main()
 		case NAVIGATION:
 			
 			PrintMap (link, goblin);
-			//ACTION cin << action;
-			// //FUNTION MoveAction (action, link, goblin);
+			cin >> action;
+			MoveAction(action, link, goblin);
 			//introduir tot el mapa
 			//el mapejat dels objectes, enemics...
 			//moviment
@@ -44,7 +43,7 @@ int main()
 			//currentScene = NAVIGATION; //no cau en res
 			break;
 		case COMBAT:
-
+			system("Pause");
 			//PlayCombat( link, goblin);
 			//afegir tot el combat
 			//currentScene = NAVIGATION; //torna al mapa amb 1 enemic menys al mapa

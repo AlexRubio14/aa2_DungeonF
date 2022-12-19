@@ -14,9 +14,9 @@ void Player::Init()
     maxStamina = RandomNumber(90, 110);
     stamina = maxStamina;
 
-    maxAgility = 3;
-    agility = maxAgility;
-    currentAgility = maxAgility;
+    maxMoves = 3;
+    moves = maxMoves;
+    currentMoves = maxMoves;
 
     maxPotion = 3;
     potions = maxPotion;
