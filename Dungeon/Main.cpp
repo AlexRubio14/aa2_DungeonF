@@ -4,16 +4,18 @@ enum Scene { START, NAVIGATION, COMBAT, LOOTING, GAMEOVER };
 
 int main()
 {
+	char action;
 	srand(time(NULL));
-
-	Scene currentScene = NAVIGATION;
-	bool isPlaying = true;
-
 	Player link;
 	link.Init();
-	int totalGoblins = RandomNumber(5,7);
-	Enemy goblin[5];
-	CreateEnemies(link, goblin);
+	int totalGoblins = RandomNumber(5, 7);
+	Enemy goblin[7];
+	for (int i = 0; i < 7; i++)
+		goblin[i].Init();
+
+	Scene currentScene = COMBAT;
+	bool isPlaying = true;
+
 	//Chest cofre[2];
 
 	char playerAction;
@@ -31,6 +33,8 @@ int main()
 		case NAVIGATION:
 			
 			PrintMap (link, goblin);
+			//ACTION cin << action;
+			// //FUNTION MoveAction (action, link, goblin);
 			//introduir tot el mapa
 			//el mapejat dels objectes, enemics...
 			//moviment
@@ -40,6 +44,8 @@ int main()
 			//currentScene = NAVIGATION; //no cau en res
 			break;
 		case COMBAT:
+
+			//PlayCombat( link, goblin);
 			//afegir tot el combat
 			//currentScene = NAVIGATION; //torna al mapa amb 1 enemic menys al mapa
 			break;
@@ -60,19 +66,4 @@ int main()
 int RandomNumber(int min, int max)
 {
 	return rand() % (max - min + 1) + min;
-}
-
-void CreateEnemies(Player& link, Enemy goblin[]) {
-
-	//DECLARAR QUE HI HA 5 ENEMICS
-	for (int k = 0; k < 5; k++)
-	{
-
-		//si el enemigo encaja con el player se recoloca su posicion
-		if (goblin[k].position.x == link.position.x && goblin[k].position.y == link.position.y)
-		{
-			goblin[k].position.x = RandomNumber(0, 4);
-			goblin[k].position.y = RandomNumber(0, 4);
-		}
-	}
 }
