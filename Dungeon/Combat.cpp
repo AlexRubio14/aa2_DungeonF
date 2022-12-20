@@ -1,9 +1,10 @@
 #include "Combat.h"
 
-void PlayCombat(Player& link, Enemy goblin) {
+void PlayCombat(Player& link, Enemy& goblin) {
 
+	goblin.Init();
 	int pAttack, pStaminaUsed = 0;
-	int eAttack = RandomNumber(goblin.maxStamina % 20,goblin.stamina), eStaminaUsed = 0;
+	int eAttack = RandomNumber(goblin.maxStamina - (goblin.maxStamina * 0.8), goblin.stamina), eStaminaUsed = 0;
 	int drawing = RandomNumber(0, 1);
 
 	while (link.isAlive && goblin.isAlive) {
@@ -19,7 +20,7 @@ void PlayCombat(Player& link, Enemy goblin) {
 		Barres(goblin.health, goblin.maxHealth);
 		Barres(goblin.stamina, goblin.maxStamina);
 
-		printf("-----------------------------\n\n A--> Attack\n D --> Defend\n R --> Rest\n P --> Potion \n\n Enter your action: ");
+		printf("-----------------------------\n\n A--> Attack\n D --> Defend\n R --> Rest\n P --> Potions \n\n Enter your action: ");
 
 		char actions, eAction;
 		cin >> actions;
@@ -79,7 +80,7 @@ void PlayCombat(Player& link, Enemy goblin) {
 		case 'D':
 		case 'd':
 			if (eAction == 'A') {
-				link.stamina += link.stamina * 0.25;
+				link.stamina += 1 + link.stamina * 0.25;
 				link.health -= (eAttack * 0.25);
 				goblin.stamina -= eAttack;
 				eStaminaUsed = (eAttack * 0.25) + 1;
@@ -87,7 +88,7 @@ void PlayCombat(Player& link, Enemy goblin) {
 
 			}
 			else if (eAction == 'D') {
-				goblin.stamina += goblin.stamina * 0.25;
+				goblin.stamina +=  1 + goblin.stamina * 0.25;
 				link.stamina += link.stamina * 0.25;
 				printf("You both defend! ");
 			}
@@ -131,7 +132,7 @@ void PlayCombat(Player& link, Enemy goblin) {
 			if (eAction == 'A') {
 				DrinkPotion(link);
 				link.health -= eAttack;
-				link.stamina -= eAttack;
+				goblin.stamina -= eAttack;
 				
 				eStaminaUsed = (link.maxHealth * 0.4) - eAttack;
 				printf("You drink the potion when the enemy hits you, striking %d damage\n", eStaminaUsed);
@@ -162,6 +163,10 @@ void PlayCombat(Player& link, Enemy goblin) {
 		if (link.stamina > link.maxStamina) {
 			link.stamina = link.maxStamina;
 		}
+		if (link.stamina <= 0)
+			link.stamina = 1;
+		if (goblin.stamina <= 0)
+			goblin.stamina = 1;
 		system("pause");
 		system("cls");
 	}
@@ -185,19 +190,27 @@ void DrawEnemy(int draw)
 {
 	if (draw == 0)
 	{
-		printf(" ---- Goblin Radev ----\n");
+		printf(" ---- Mini Goblin Radev ----\n");
 		printf("      ___  \n");
 		printf("     |._.|  \n");
 		printf("    __|  |__ \n");
 		printf("   |  |__|  |\n");
 		printf("    _|    |_  \n\n");
 	}
-	else
+	else if (draw == 1)
 	{
-		printf(" ---- Radev Mug's ----\n");
+		printf(" ---- Radev'S Mug ----\n");
 		printf("   _|     | \n");
 		printf("  (_| T_T | \n");
 		printf("    |_____| \n\n");
+	}
+	else if (draw == 2)
+	{
+		
+	}
+	else
+	{
+
 	}
 }
 

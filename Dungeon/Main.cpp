@@ -15,6 +15,7 @@ int main()
 	Player link;
 	link.Init();
 
+	int menosEnemy = 5;
 	Enemy goblin[5];
 	Chest cofre[2];
 	for (int i = 0; i < 2; i++)
@@ -22,7 +23,7 @@ int main()
 	CrearCofres(link, cofre);
 	
 	
-	bool isPlaying = true;
+	bool isPlaying = true, chestFounded = false, goblinFounded = false;
 
 	//Chest cofre[2];
 
@@ -40,9 +41,19 @@ int main()
 			break;
 		case NAVIGATION:
 			
-			PrintMap (link, goblin, cofre);
+			PrintMap (link, goblin, cofre, menosEnemy);
 			cin >> action;
 			MoveAction(action, link, goblin, cofre);
+			ChestFounded(link, cofre, chestFounded);
+			EnemyFounded(link, goblin, goblinFounded);
+			if (chestFounded)
+				currentScene = LOOTING;
+			else if (goblinFounded)
+			{
+				currentScene = COMBAT;
+				goblinFounded = false;
+
+			}
 			//introduir tot el mapa
 			//el mapejat dels objectes, enemics...
 			//moviment
@@ -52,7 +63,16 @@ int main()
 			//currentScene = NAVIGATION; //no cau en res
 			break;
 		case COMBAT:
+			system("cls");
+			PlayCombat(link, goblin[5]);
 			system("Pause");
+			if (link.isAlive == true && goblin[5].isAlive == false)
+			{
+				currentScene = NAVIGATION;
+				menosEnemy--;
+			}
+			if (link.isAlive == false)
+				currentScene = GAMEOVER;
 			//PlayCombat( link, goblin);
 			//afegir tot el combat
 			//currentScene = NAVIGATION; //torna al mapa amb 1 enemic menys al mapa
@@ -64,6 +84,7 @@ int main()
 			//afegir tot el sistema de cofres
 			break;
 		case GAMEOVER:
+			PrintGameover(link, isPlaying);
 			//missatge de gameover
 			//isPlaying = false;
 			break;
@@ -79,14 +100,32 @@ int RandomNumber(int min, int max)
 	return rand() % (max - min + 1) + min;
 }
 
-void ChestFounded(Player& link, Chest cofre[]) {
+bool ChestFounded(Player& link, Chest cofre[], bool& chestFounded) {
+	
 	for (int i = 0; i < 2; i++)
 	{
-		if (link.position.x == cofre[i].position.x && link.position.x == cofre[i].position.y)
+		if (link.position.x == cofre[i].position.x && link.position.y == cofre[i].position.y)
 		{
 			cofre[i].position.x = 30;
 			//link.moves
 			Scene currentScene = LOOTING;
+			chestFounded = true;
 		}
 	}
+	return chestFounded;
+}
+
+bool EnemyFounded(Player& link, Enemy goblin[], bool& goblinFounded) {
+
+	for (int i = 0; i < 5; i++)
+	{
+		if (link.position.x == goblin[i].position.x && link.position.y == goblin[i].position.y)
+		{
+			goblin[i].position.x = 30;
+			//link.moves
+			Scene currentScene = COMBAT;
+			goblinFounded = true;
+		}
+	}
+	return goblinFounded;
 }

@@ -1,14 +1,14 @@
 #include "Header.h"
 
-void PrintMap(Player& link, Enemy goblin[], Chest cofre[]) {
+void PrintMap(Player& link, Enemy goblin[], Chest cofre[], int& menosEnemy) {
 	if (link.moves == 3) 
 	{
-		for (int i = 0; i < 5; i++)
+		for (int i = 0; i < menosEnemy; i++)
 			goblin[i].Init();
 	}
 	
 	// TOP PART
-	printf("------ DUNGEON ------\n\nE -> Enemy    P -> Player    C -> Chest\n\nHealth: %d / %d\nPotion: %d / %d\nMoves: %d / %d\n\n",
+	printf("------ RADEV'S CASTLE ------\n\nE -> Enemy    P -> Player    C -> Chest\n\nHealth: %d / %d\nPotions: %d / %d\nMoves: %d / %d\n\n",
 		link.health, link.maxHealth, link.potions, link.maxPotion, link.moves, link.maxMoves);
 
 	for (int i = 0; i < 5; i++)
@@ -36,9 +36,9 @@ void PrintMap(Player& link, Enemy goblin[], Chest cofre[]) {
 			if (link.moves == 3) {
 				
 				//DECLARAR POSITION ENEMYS
-				for (int k = 0; k < 5; k++)
+				for (int k = 0; k < menosEnemy; k++)
 				{
-					for (int k = 0; k < 5; k++)
+					for (int k = 0; k < menosEnemy; k++)
 					{
 						if (goblin[k].position.x == link.position.x && goblin[k].position.y == link.position.y || goblin[k].position.x == cofre[0].position.x &&
 							goblin[k].position.y == cofre[0].position.y || goblin[k].position.x == cofre[1].position.x &&
@@ -175,11 +175,10 @@ void MoveAction(char action, Player& link, Enemy goblin[], Chest cofre[])
 	}
 	if (link.moves == 0)
 		link.moves = link.maxMoves;
-	ChestFounded(link, cofre);
 	/*
 	for (int i = 0; i < 2; i++)
 	{
-		if (link.position.x == cofre[i].position.x && link.position.x == cofre[i].position.y)
+		if (link.position.x == cofre[i].position.x && link.position.y == cofre[i].position.y)
 		{
 			cofre[i].position.x = 30;
 			//link.moves
