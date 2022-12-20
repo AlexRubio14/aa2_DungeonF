@@ -14,7 +14,6 @@ struct Player
 
     int moves;
     int maxMoves;
-    int currentMoves;
 
     int potions;
     int maxPotion;

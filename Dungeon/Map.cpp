@@ -3,8 +3,16 @@
 void PrintMap(Player& link, Enemy goblin[], Chest cofre[], int& menosEnemy) {
 	if (link.moves == 3) 
 	{
-		for (int i = 0; i < menosEnemy; i++)
-			goblin[i].Init();
+		for (int i = 0; i < 5; i++)
+		{
+			if(i < menosEnemy)
+				goblin[i].Init();
+			else
+			{
+				goblin[i].Init();
+				goblin[i].position.x = 30 + i;
+			}
+		}
 	}
 	
 	// TOP PART
@@ -102,7 +110,7 @@ void MoveAction(char action, Player& link, Enemy goblin[], Chest cofre[])
 {
 	int i = link.position.x;
 	int j = link.position.y;
-	if (link.currentMoves == 0)
+	if (link.moves == 0)
 	{
 
 	}
@@ -171,6 +179,7 @@ void MoveAction(char action, Player& link, Enemy goblin[], Chest cofre[])
 			break;
 		default: 
 			cout << "ERROR";
+			system("pause");
 			break;
 	}
 	if (link.moves == 0)

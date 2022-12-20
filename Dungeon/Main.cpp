@@ -2,13 +2,12 @@
 
 enum Scene { START, NAVIGATION, COMBAT, LOOTING, GAMEOVER };
 
-
 int main()
 {
 	
 	srand(time(NULL));
 
-	Scene currentScene = NAVIGATION;
+	Scene currentScene = START;
 
 	char action;
 
@@ -18,14 +17,15 @@ int main()
 	int menosEnemy = 5;
 	Enemy goblin[5];
 	Chest cofre[2];
+	
 	for (int i = 0; i < 2; i++)
 		cofre[i].Init();
+	
 	CrearCofres(link, cofre);
 	
+
 	
 	bool isPlaying = true, chestFounded = false, goblinFounded = false;
-
-	//Chest cofre[2];
 
 	char playerAction;
 
@@ -34,7 +34,8 @@ int main()
 		switch (currentScene)
 		{
 		case START:
-		
+			Introduction();
+			currentScene = NAVIGATION;
 			//afegir tota la introducció del joc
 			//currentScene = NAVIGATION;
 			//system("cls"); //netejar la consola
@@ -73,13 +74,17 @@ int main()
 			}
 			if (link.isAlive == false)
 				currentScene = GAMEOVER;
+			if (menosEnemy == 0)
+				currentScene = GAMEOVER;
 			//PlayCombat( link, goblin);
 			//afegir tot el combat
 			//currentScene = NAVIGATION; //torna al mapa amb 1 enemic menys al mapa
 			break;
 		case LOOTING:
 			system("cls");
-			cout << "Estas en looting";
+			OpenChest(link,cofre);
+			chestFounded = false;
+			currentScene = NAVIGATION;
 			system("pause");
 			//afegir tot el sistema de cofres
 			break;
@@ -93,6 +98,7 @@ int main()
 			break;
 		}
 	}
+	return 0;
 }
 
 int RandomNumber(int min, int max)
@@ -129,3 +135,4 @@ bool EnemyFounded(Player& link, Enemy goblin[], bool& goblinFounded) {
 	}
 	return goblinFounded;
 }
+

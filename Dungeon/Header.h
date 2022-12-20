@@ -17,7 +17,7 @@ void MoveAction(char action, Player& link, Enemy goblin[], Chest cofre[]);
 bool ChestFounded(Player& link, Chest cofre[], bool& chestFounded);
 bool EnemyFounded(Player& link, Enemy goblin[], bool& goblinFounded);
 void PrintGameover(Player& link, bool& isPlaying);
-
+void Introduction();
 
 //system("pause");
 //system("cls");

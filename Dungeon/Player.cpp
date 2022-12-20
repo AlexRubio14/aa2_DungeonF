@@ -16,7 +16,6 @@ void Player::Init()
 
     maxMoves = 3;
     moves = maxMoves;
-    currentMoves = maxMoves;
 
     maxPotion = 3;
     potions = maxPotion;

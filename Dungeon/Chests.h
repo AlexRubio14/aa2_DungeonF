@@ -9,17 +9,15 @@ struct Chest
 
 	bool looted;
 	int gold; //pot tenir entre 50 - 200
+	int hp;
+	int stamina;
+	int moves;
+	int attack;
 	bool potion;
-	struct looting
-	{
-		int gold;
-		int HP;
-		int stamina;
-		int agility;
-		int attack;
-
-		void Init();
-	};
+	
 	void Init();
 };
+
+
 void CrearCofres(Player& link, Chest cofre[]);
+void OpenChest(Player& link, Chest cofre[]);

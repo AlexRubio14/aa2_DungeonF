@@ -1,5 +1,5 @@
-#include "Chests.h"
-#include "Player.h"
+#include "Header.h"
+
 
 void Chest::Init() 
 {
@@ -8,8 +8,8 @@ void Chest::Init()
 
 	gold = RandomNumber(50, 200);
 }
-
-void Chest::looting::Init()
+/*
+void looting::Init()
 {
 	looting triforce, tunic, masterSword, shield, minishCap, epona, brokenLeaf, majorasMask, navi, bomb;
 
@@ -73,18 +73,19 @@ void Chest::looting::Init()
 	bomb.agility = 0;
 	bomb.attack = 0;
 }
+*/
 
 void CrearCofres(Player& link, Chest cofre[]) {
 	//for (int c = 0; c < 2; c++)
 	//{
-	for (int c = 0; c < 5; c++)
+	for (int c = 0; c < 2; c++)
 	{
 		if (cofre[c].position.x == link.position.x && cofre[c].position.y == link.position.y)
 		{
 			cofre[c].position.x = RandomNumber(0, 4);
 			cofre[c].position.y = RandomNumber(0, 4);
 		}
-		for (int z = 1; z < 5; z++)
+		for (int z = 1; z < 2; z++)
 		{
 			if (cofre[c].position.x == cofre[c - z].position.x && cofre[c].position.y == cofre[c - c].position.y)
 			{
@@ -94,6 +95,23 @@ void CrearCofres(Player& link, Chest cofre[]) {
 		}
 	}
 }
-		//if (cofre[c].position.x == j && cofre[c].position.y == i)
-			//chestFound = true;
-	//}
+
+void OpenChest(Player& link, Chest cofre[]) {
+
+
+	int chestGold = RandomNumber(50, 200);
+	link.gold += chestGold;
+	int containsPotion = RandomNumber(0,3);
+	printf("----- CHEST -----\n\n > You founded a chest. You've obtained the following list of items: \n\n");
+	if (containsPotion == 0){
+		printf("	> %d gold!\n	> 1 Potion\n", chestGold);	//> This chest has gear equipment inside!\n ---------------------------------------\n", chestGold);
+		link.potions++;
+	}
+	else 
+	{
+		printf("		> %d gold!\n", chestGold);		//> This chest has gear equipment inside!\n---------------------------------------\n", chestGold);
+	}
+	if (link.potions > link.maxPotion)
+		link.potions = link.maxPotion;
+
+}
