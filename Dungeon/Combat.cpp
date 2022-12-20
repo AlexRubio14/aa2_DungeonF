@@ -5,22 +5,22 @@ void PlayCombat(Player& link, Enemy& goblin) {
 	goblin.Init();
 	int pAttack, pStaminaUsed = 0;
 	int eAttack = RandomNumber(goblin.maxStamina - (goblin.maxStamina * 0.8), goblin.stamina), eStaminaUsed = 0;
-	int drawing = RandomNumber(0, 1);
+	int drawing = RandomNumber(0, 3);
 
 	while (link.isAlive && goblin.isAlive) {
 
-		printf_s("----- COMBAT -----\n\n\n ---- Player ---- \n\n");
+		PrintPlayer();
 
 		Barres(link.health, link.maxHealth);
 		Barres(link.stamina, link.maxStamina);
 
-		printf("\nPotions % d / 3\n\n-----------------------------\n\n", link.potions);
+		printf("\nPotions % d / 3\n-----------------------------\n", link.potions);
 		DrawEnemy(drawing);
 
 		Barres(goblin.health, goblin.maxHealth);
 		Barres(goblin.stamina, goblin.maxStamina);
 
-		printf("-----------------------------\n\n A--> Attack\n D --> Defend\n R --> Rest\n P --> Potions \n\n Enter your action: ");
+		printf("-----------------------------\n\n A--> Attack\t D --> Defend\n R --> Rest\t P --> Potions \n\n Enter your action: ");
 
 		char actions, eAction;
 		cin >> actions;
@@ -190,12 +190,13 @@ void DrawEnemy(int draw)
 {
 	if (draw == 0)
 	{
-		printf(" ---- Mini Goblin Radev ----\n");
+		printf("---- MiniRichard  ----\n");
 		printf("      ___  \n");
-		printf("     |._.|  \n");
+		printf("     |o_o|  \n");
 		printf("    __|  |__ \n");
 		printf("   |  |__|  |\n");
 		printf("    _|    |_  \n\n");
+
 	}
 	else if (draw == 1)
 	{
@@ -206,14 +207,35 @@ void DrawEnemy(int draw)
 	}
 	else if (draw == 2)
 	{
-		
+		printf("---- Suspicious Radev ----\n");
+		printf("      _v__ \n");
+		printf("     |-_- |  \n");
+		printf("     s|    |s \n");
+		printf("      |____|  \n");
+		printf("     _|    |_  \n\n");
+
 	}
 	else
 	{
-
+		printf("---- Creators ----\n");
+		printf("               ____  \n");
+		printf(" hi! ____     | 'w'|    \n");
+		printf("    | '3'|   ||    ||    \n");
+		printf("   '|____|'   |____|         \n");
+		printf("      L L       L L  \n\n");
 	}
 }
 
+void PrintPlayer() {
+	printf("----- COMBAT -----\n---- Player ----\n");
+	printf("      ____ \n");
+	printf("     |._. |  \n");
+	printf("     |  __|  \n");
+	printf(" <==|| |   | \n");
+	printf("     |_|___|  \n");
+	printf("     _|  _|  \n");
+
+}
 
 
 
