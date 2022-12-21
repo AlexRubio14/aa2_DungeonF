@@ -4,7 +4,8 @@ void PrintGameover(Player& link, bool& isPlaying) {
 	if (link.isAlive)
 	{
 		cout << "You have win!!" << endl;
-		printf("\n---- Princess Eduina  ----\n");
+		printf("\n---- Princess Eduina & Player ----\n");
+		printf("\n  my hero!\n");
 		printf("     _____         ____   \n");
 		printf("    || UwU|   <3  |UwU |     \n");
 		printf("    ||  ) )       |  __|      \n");
@@ -15,7 +16,7 @@ void PrintGameover(Player& link, bool& isPlaying) {
 	else
 	{
 		cout << "You have lost!" << endl;
-		printf("\n---- Princess Eduina  ----\n");
+		printf("\n---- Princess Eduina & Player ----\n");
 		printf("      _____         ____   \n");
 		printf("     |-.- ||       |T.T |     \n");
 		printf("    ( (   ||       |  __|      \n");
