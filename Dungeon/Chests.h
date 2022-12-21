@@ -20,4 +20,4 @@ struct Chest
 
 
 void CrearCofres(Player& link, Chest cofre[]);
-void OpenChest(Player& link, Chest cofre[]);
+void OpenChest(Player& link, Chest cofre[], int& chestClosed);

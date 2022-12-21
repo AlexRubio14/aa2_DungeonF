@@ -110,9 +110,9 @@ void CrearCofres(Player& link, Chest cofre[]) {
 	}
 }
 
-void OpenChest(Player& link, Chest cofre[]) {
+void OpenChest(Player& link, Chest cofre[], int& chestClosed) {
 
-
+	chestClosed--;
 	int chestGold = RandomNumber(50, 200);
 	link.gold += chestGold;
 	int containsPotion = RandomNumber(0,3);

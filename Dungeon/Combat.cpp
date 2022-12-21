@@ -8,7 +8,7 @@ void PlayCombat(Player& link, Enemy& goblin) {
 	int draw = RandomNumber(0, 3);
 
 	while (link.isAlive && goblin.isAlive) {
-
+		system("cls");
 		PrintPlayer();
 
 		Barres(link.health, link.maxHealth);
@@ -151,6 +151,9 @@ void PlayCombat(Player& link, Enemy& goblin) {
 				break;
 			}
 		default:
+			printf_s(" ERROR\n");
+			system("pause");
+			system("cls");
 			break;
 		}
 		if (link.health <= 0) {
@@ -174,10 +177,10 @@ void PlayCombat(Player& link, Enemy& goblin) {
 int Barres(int primeraBarra, int segonaBarra) {
 	int digits;
 	digits = (primeraBarra * 10 / segonaBarra);
-	printf("[");
-	for (int d = digits; d > 0; d--)
+	printf("[=");
+	for (int d = digits; d > 1; d--)
 		printf("=");
-	for (int d = digits; d < 10; d++)
+	for (int d = digits; d < 9; d++)
 		printf(" ");
 	printf("] %d / %d\n", primeraBarra, segonaBarra);
 	return 0;

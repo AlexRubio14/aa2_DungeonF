@@ -2,13 +2,13 @@
 
 void PrintMap(Player& link, Enemy goblin[], Chest cofre[], int& menosEnemy) {
 	
-	//Inicialitzar els enemics cada vegada que s'han de moure 
-	//(sabem que no es molt optim pero no sabiem fer-ho d'un altre manera)
-	if (link.moves == link.maxMoves) 
+	if (link.moves == 0)
 	{
+		//Inicialitzar els enemics cada vegada que s'han de moure 
+		//(sabem que no es molt optim pero no sabiem fer-ho d'un altre manera)
 		for (int i = 0; i < 5; i++)
 		{
-			if(i < menosEnemy)
+			if (i < menosEnemy)
 				goblin[i].Init();
 			else
 			{
@@ -16,8 +16,9 @@ void PrintMap(Player& link, Enemy goblin[], Chest cofre[], int& menosEnemy) {
 				goblin[i].position.x = 30 + i;
 			}
 		}
+		link.moves = link.maxMoves;
 	}
-	
+
 	// TOP PART
 	printf("------ RADEV'S CASTLE ------\n\nE -> Enemy    P -> Player    C -> Chest\n\nHealth: %d / %d\nPotions: %d / %d\nMoves: %d / %d\n\n",
 		link.health, link.maxHealth, link.potions, link.maxPotion, link.moves, link.maxMoves);
@@ -105,7 +106,7 @@ void PrintMap(Player& link, Enemy goblin[], Chest cofre[], int& menosEnemy) {
 	printf("___________________\n\nW A S D -> Move\nP -> Potion\n\nEnter your action:");
 }
 
-void MoveAction(char action, Player& link, Enemy goblin[], Chest cofre[])
+void MoveAction(char action, Player& link, Enemy goblin[], Chest cofre[], int& menosEnemy)
 {
 	int i = link.position.x, j = link.position.y;
 
@@ -179,9 +180,5 @@ void MoveAction(char action, Player& link, Enemy goblin[], Chest cofre[])
 			system("pause");
 			system("cls");
 			break;
-	}
-	if (link.moves == 0)
-	{
-		link.moves = link.maxMoves;
 	}
 }

@@ -15,7 +15,7 @@ enum Scene;
 
 int Barres(int primeraBarra, int segonaBarra);
 void PrintMap(Player& link, Enemy goblin[], Chest cofre[], int& menosEnemy);
-void MoveAction(char action, Player& link, Enemy goblin[], Chest cofre[]);
+void MoveAction(char action, Player& link, Enemy goblin[], Chest cofre[], int& menosEnemy);
 bool ChestFounded(Player& link, Chest cofre[], bool& chestFounded);
 bool EnemyFounded(Player& link, Enemy goblin[], bool& goblinFounded);
 void PrintGameover(Player& link, bool& isPlaying);

@@ -11,10 +11,11 @@ int main()
 	
 	char action;
 	Player link; //Inicialitzem el jugador 
-	link.Init();
 
-	int enemiesAlive = 5; //Aquesta variable ens indicarà quants enemics queden vius
+	int enemiesAlive = 5, chestClosed = NUM_COFRES; //Aquesta variable ens indicarà quants enemics queden vius
 	Enemy goblin[5]; //Crearem 5 enemics (el random de 5 i 7 enemics ens ha petat el cap)
+	for (int i = 0; i < 5; i++)
+		goblin[i].Init();
 	
 	Chest cofre[NUM_COFRES]; //Inicialitzem els cofres
 	for (int i = 0; i < NUM_COFRES; i++)
@@ -29,12 +30,16 @@ int main()
 		{
 		case START:
 			Start(); 
+			link.Init();
 			currentScene = NAVIGATION;
 			break;
 		case NAVIGATION:
+			if (enemiesAlive == 0 && chestClosed == 0)
+				currentScene = GAMEOVER;
 			PrintMap (link, goblin, cofre, enemiesAlive);
 			cin >> action;
-			MoveAction(action, link, goblin, cofre);
+			MoveAction(action, link, goblin, cofre, enemiesAlive);
+		
 			ChestFounded(link, cofre, chestFounded);
 			EnemyFounded(link, goblin, goblinFounded);
 			if (chestFounded)
@@ -44,7 +49,6 @@ int main()
 				currentScene = COMBAT;
 				goblinFounded = false;
 			}
-
 			break;
 		case COMBAT:
 			system("cls");
@@ -57,26 +61,21 @@ int main()
 			}
 			if (link.isAlive == false)
 				currentScene = GAMEOVER;
-			if (enemiesAlive == 0)
-				currentScene = GAMEOVER;
 			break;
 		case LOOTING:
 			system("cls");
-			OpenChest(link,cofre);
+			OpenChest(link,cofre, chestClosed);
 			chestFounded = false;
 			currentScene = NAVIGATION;
-			system("pause");
 			break;
 		case GAMEOVER:
 			PrintGameover(link, isPlaying);
 			currentScene = START;
 			break;
 		default:
-			//ns que va aquí pero estava posat en els apunts
 			break;
 		}
 	}
- 
 	return 0;
 }
 
