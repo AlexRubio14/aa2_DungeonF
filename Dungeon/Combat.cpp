@@ -4,8 +4,8 @@ void PlayCombat(Player& link, Enemy& goblin) {
 
 	goblin.Init();
 	int pAttack, pStaminaUsed = 0;
-	int eAttack = RandomNumber(goblin.maxStamina - (goblin.maxStamina * 0.8), goblin.stamina), eStaminaUsed = 0;
-	int drawing = RandomNumber(0, 3);
+	int eAttack = RandomNumber(goblin.maxStamina * 0.2, goblin.stamina), eStaminaUsed = 0;
+	int draw = RandomNumber(0, 3);
 
 	while (link.isAlive && goblin.isAlive) {
 
@@ -15,7 +15,7 @@ void PlayCombat(Player& link, Enemy& goblin) {
 		Barres(link.stamina, link.maxStamina);
 
 		printf("\nPotions % d / 3\n-----------------------------\n", link.potions);
-		DrawEnemy(drawing);
+		DrawEnemy(draw);
 
 		Barres(goblin.health, goblin.maxHealth);
 		Barres(goblin.stamina, goblin.maxStamina);
@@ -41,12 +41,11 @@ void PlayCombat(Player& link, Enemy& goblin) {
 			printf_s(" \nEnter the attack value (Max %d): ", link.stamina);
 			cin >> pAttack;
 
-			if (pAttack < 0 || pAttack > link.maxStamina) {
+			if (pAttack < 0 || pAttack > link.maxStamina) { // si posa un valor no possible
 				break;
 			}
 
 			if (eAction == 'A') { // enemic ataca
-
 
 				if (pAttack >= eAttack) { // attack del jugador mes gran que el del enemic
 					goblin.health -= pAttack;
@@ -62,12 +61,12 @@ void PlayCombat(Player& link, Enemy& goblin) {
 				}
 
 			}
-			else if (eAction == 'D') {//l enemic es defensa
+			else if (eAction == 'D') {// enemic es defensa
 				goblin.stamina += goblin.stamina * 0.25;
 				goblin.health -= pAttack * 0.75;
 				link.stamina -= pAttack;
-				pStaminaUsed = pAttack * 0.75;
-				printf("The enemy blocks your attack, receiving only %d damage\n", pStaminaUsed);
+			//	pStaminaUsed = pAttack * 0.75;
+				printf("The enemy blocks your attack, receiving only %d damage\n", pAttack * 0.75);
 			}
 			else if (eAction == 'R') { // l'enemic descansa
 				goblin.stamina = goblin.maxStamina;
@@ -83,8 +82,8 @@ void PlayCombat(Player& link, Enemy& goblin) {
 				link.stamina += 1 + link.stamina * 0.25;
 				link.health -= (eAttack * 0.25);
 				goblin.stamina -= eAttack;
-				eStaminaUsed = (eAttack * 0.25) + 1;
-				printf("You defend the enemy blow, but receive %d damage\n", eStaminaUsed); // Quan passa aixo printa un 0 a la consola en el %d igual esta mal el calcul
+		//		eStaminaUsed = (eAttack * 0.25) + 1;
+				printf("You defend the enemy blow, but receive %d damage\n", (eAttack * 0.25) + 1); // Quan passa aixo printa un 0 a la consola en el %d igual esta mal el calcul
 
 			}
 			else if (eAction == 'D') {
@@ -167,8 +166,6 @@ void PlayCombat(Player& link, Enemy& goblin) {
 			link.stamina = 1;
 		if (goblin.stamina <= 0)
 			goblin.stamina = 1;
-		system("pause");
-		system("cls");
 	}
 	system("pause");
 	system("cls");
@@ -200,7 +197,7 @@ void DrawEnemy(int draw)
 	}
 	else if (draw == 1)
 	{
-		printf(" ---- Radev'S Mug ----\n");
+		printf(" ---- Radev'S Mug ----\n\n");
 		printf("   _|     | \n");
 		printf("  (_| T_T | \n");
 		printf("    |_____| \n\n");

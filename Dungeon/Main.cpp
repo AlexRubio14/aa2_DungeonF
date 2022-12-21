@@ -2,47 +2,37 @@
 
 enum Scene { START, NAVIGATION, COMBAT, LOOTING, GAMEOVER };
 
+//Joc inspirat en "The Legend of Zelda" :)
 int main()
 {
-	
 	srand(time(NULL));
 
-	Scene currentScene = START;
-
+	Scene currentScene = START; //Dividim el joc en escenes i inicialitzem a Start
+	
 	char action;
-
-	Player link;
+	Player link; //Inicialitzem el jugador 
 	link.Init();
 
-	int menosEnemy = 5;
-	Enemy goblin[5];
-	Chest cofre[2];
+	int enemiesAlive = 5; //Aquesta variable ens indicarà quants enemics queden vius
+	Enemy goblin[5]; //Crearem 5 enemics (el random de 5 i 7 enemics ens ha petat el cap)
 	
-	for (int i = 0; i < 2; i++)
+	Chest cofre[NUM_COFRES]; //Inicialitzem els cofres
+	for (int i = 0; i < NUM_COFRES; i++)
 		cofre[i].Init();
-	
 	CrearCofres(link, cofre);
 	
-
-	
 	bool isPlaying = true, chestFounded = false, goblinFounded = false;
-
-	char playerAction;
 
 	while (isPlaying)
 	{
 		switch (currentScene)
 		{
 		case START:
-			Introduction();
+			Start(); 
 			currentScene = NAVIGATION;
-			//afegir tota la introducció del joc
-			//currentScene = NAVIGATION;
-			//system("cls"); //netejar la consola
 			break;
 		case NAVIGATION:
-			
-			PrintMap (link, goblin, cofre, menosEnemy);
+			PrintMap (link, goblin, cofre, enemiesAlive);
 			cin >> action;
 			MoveAction(action, link, goblin, cofre);
 			ChestFounded(link, cofre, chestFounded);
@@ -53,15 +43,8 @@ int main()
 			{
 				currentScene = COMBAT;
 				goblinFounded = false;
-
 			}
-			//introduir tot el mapa
-			//el mapejat dels objectes, enemics...
-			//moviment
-			//if per entrar als diversos escenaris
-			//currentScene = LOOTING; //agafa cofre
-			//currentScene = COMBAT; //cau amb enemic
-			//currentScene = NAVIGATION; //no cau en res
+
 			break;
 		case COMBAT:
 			system("cls");
@@ -70,15 +53,12 @@ int main()
 			if (link.isAlive == true && goblin[5].isAlive == false)
 			{
 				currentScene = NAVIGATION;
-				menosEnemy--;
+				enemiesAlive--;
 			}
 			if (link.isAlive == false)
 				currentScene = GAMEOVER;
-			if (menosEnemy == 0)
+			if (enemiesAlive == 0)
 				currentScene = GAMEOVER;
-			//PlayCombat( link, goblin);
-			//afegir tot el combat
-			//currentScene = NAVIGATION; //torna al mapa amb 1 enemic menys al mapa
 			break;
 		case LOOTING:
 			system("cls");
@@ -86,18 +66,17 @@ int main()
 			chestFounded = false;
 			currentScene = NAVIGATION;
 			system("pause");
-			//afegir tot el sistema de cofres
 			break;
 		case GAMEOVER:
 			PrintGameover(link, isPlaying);
-			//missatge de gameover
-			//isPlaying = false;
+			currentScene = START;
 			break;
 		default:
 			//ns que va aquí pero estava posat en els apunts
 			break;
 		}
 	}
+ 
 	return 0;
 }
 

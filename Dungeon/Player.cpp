@@ -28,4 +28,9 @@ void DrinkPotion(Player& link) {
         link.health = link.maxHealth;
     }
     link.potions--;
+    if (link.potions <= 0)
+    {
+        printf("You have no potions!");
+        link.potions = 0;
+    }
 }

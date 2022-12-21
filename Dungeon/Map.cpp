@@ -1,7 +1,10 @@
 #include "Header.h"
 
 void PrintMap(Player& link, Enemy goblin[], Chest cofre[], int& menosEnemy) {
-	if (link.moves == 3) 
+	
+	//Inicialitzar els enemics cada vegada que s'han de moure 
+	//(sabem que no es molt optim pero no sabiem fer-ho d'un altre manera)
+	if (link.moves == link.maxMoves) 
 	{
 		for (int i = 0; i < 5; i++)
 		{
@@ -21,7 +24,6 @@ void PrintMap(Player& link, Enemy goblin[], Chest cofre[], int& menosEnemy) {
 
 	for (int i = 0; i < 5; i++)
 		printf(" ___ ");
-
 	printf("\n");
 
 	//PRINT ROWS
@@ -30,20 +32,21 @@ void PrintMap(Player& link, Enemy goblin[], Chest cofre[], int& menosEnemy) {
 		//TOP PART
 		for (int j = 0; j < 5; j++)
 			printf("|   |");
-
 		printf("\n");
+
 		//MIDDLE PART
 		for (int j = 0; j < 5; j++)
 		{
 			bool enemyFound = false, chestFound = false;
-			for (int c = 0; c < 2; c++)
-			{
+
+			//Comprovar que no es superposen els CHESTS amb altres elements //DECLARAR CHEST AL MAPA
+			for (int c = 0; c < 2; c++)	{
 				if (cofre[c].position.x == j && cofre[c].position.y == i)
 					chestFound = true;
 			}
-			if (link.moves == 3) {
-				
-				//DECLARAR POSITION ENEMYS
+			
+			//Comprovar que no es superposen els ENEMIES amb altres elements //DECLARAR ENEMIES AL MAPA
+			if (link.moves == link.maxMoves) {		
 				for (int k = 0; k < menosEnemy; k++)
 				{
 					for (int k = 0; k < menosEnemy; k++)
@@ -69,7 +72,6 @@ void PrintMap(Player& link, Enemy goblin[], Chest cofre[], int& menosEnemy) {
 				}
 			}
 			else {
-				//DECLARAR POSITION ENEMYS
 				for (int k = 0; k < 5; k++)
 				{
 					for (int k = 0; k < 5; k++)
@@ -83,6 +85,7 @@ void PrintMap(Player& link, Enemy goblin[], Chest cofre[], int& menosEnemy) {
 				}
 			}
 
+			//PRINT CHARACTERS IN MAP
 			if (link.position.x == j && link.position.y == i)
 				printf("| P |");
 			else if (enemyFound)
@@ -93,27 +96,18 @@ void PrintMap(Player& link, Enemy goblin[], Chest cofre[], int& menosEnemy) {
 				printf("|   |");
 		}
 		printf("\n");
+
 		//BOTTOM PART
 		for (int j = 0; j < 5; j++)
 			printf("|___|");
-
 		printf("\n");
 	}
 	printf("___________________\n\nW A S D -> Move\nP -> Potion\n\nEnter your action:");
 }
-/*
-agility 
-currentAgility
-maxAgility 
-*/
+
 void MoveAction(char action, Player& link, Enemy goblin[], Chest cofre[])
 {
-	int i = link.position.x;
-	int j = link.position.y;
-	if (link.moves == 0)
-	{
-
-	}
+	int i = link.position.x, j = link.position.y;
 
 	switch (action)
 	{
@@ -126,7 +120,6 @@ void MoveAction(char action, Player& link, Enemy goblin[], Chest cofre[])
 				system("cls");
 				break;
 			}
-			
 			link.position.y = j - 1;
 			link.moves--;
 			system("pause");
@@ -176,28 +169,19 @@ void MoveAction(char action, Player& link, Enemy goblin[], Chest cofre[])
 			break;
 		case 'P':
 		case 'p':
+			DrinkPotion(link);
+			link.moves--;
+			system("pause");
+			system("cls");
 			break;
 		default: 
-			cout << "ERROR";
+			cout << "ERROR" << endl;
 			system("pause");
+			system("cls");
 			break;
 	}
 	if (link.moves == 0)
-		link.moves = link.maxMoves;
-	/*
-	for (int i = 0; i < 2; i++)
 	{
-		if (link.position.x == cofre[i].position.x && link.position.y == cofre[i].position.y)
-		{
-			cofre[i].position.x = 30;
-			//link.moves
-			bool chestFounded = true;
-		}
+		link.moves = link.maxMoves;
 	}
-	*/
-	
-	//for comparant que no caigui amb cap enemic
-	//currentScene = COMBAT
-
-		
-}//Fill the map with 10 bombs 
+}
