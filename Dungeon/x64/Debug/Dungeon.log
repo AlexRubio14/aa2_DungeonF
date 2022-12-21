@@ -1,19 +1,2 @@
-﻿  Combat.cpp
-C:\Users\RUBIOPLANAALEJANDRO\Desktop\aa2_DungeonF\Dungeon\Combat.cpp(7,47): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Users\RUBIOPLANAALEJANDRO\Desktop\aa2_DungeonF\Dungeon\Combat.cpp(65,38): warning C4244: '+=': conversion from 'double' to 'int', possible loss of data
-C:\Users\RUBIOPLANAALEJANDRO\Desktop\aa2_DungeonF\Dungeon\Combat.cpp(66,30): warning C4244: '-=': conversion from 'double' to 'int', possible loss of data
-C:\Users\RUBIOPLANAALEJANDRO\Desktop\aa2_DungeonF\Dungeon\Combat.cpp(69,12): warning C4477: 'printf' : format string '%d' requires an argument of type 'int', but variadic argument 1 has type 'double'
-C:\Users\RUBIOPLANAALEJANDRO\Desktop\aa2_DungeonF\Dungeon\Combat.cpp(82,23): warning C4244: '+=': conversion from 'double' to 'int', possible loss of data
-C:\Users\RUBIOPLANAALEJANDRO\Desktop\aa2_DungeonF\Dungeon\Combat.cpp(83,29): warning C4244: '-=': conversion from 'double' to 'int', possible loss of data
-C:\Users\RUBIOPLANAALEJANDRO\Desktop\aa2_DungeonF\Dungeon\Combat.cpp(86,12): warning C4477: 'printf' : format string '%d' requires an argument of type 'int', but variadic argument 1 has type 'double'
-C:\Users\RUBIOPLANAALEJANDRO\Desktop\aa2_DungeonF\Dungeon\Combat.cpp(90,26): warning C4244: '+=': conversion from 'double' to 'int', possible loss of data
-C:\Users\RUBIOPLANAALEJANDRO\Desktop\aa2_DungeonF\Dungeon\Combat.cpp(91,34): warning C4244: '+=': conversion from 'double' to 'int', possible loss of data
-C:\Users\RUBIOPLANAALEJANDRO\Desktop\aa2_DungeonF\Dungeon\Combat.cpp(96,34): warning C4244: '+=': conversion from 'double' to 'int', possible loss of data
-C:\Users\RUBIOPLANAALEJANDRO\Desktop\aa2_DungeonF\Dungeon\Combat.cpp(113,38): warning C4244: '+=': conversion from 'double' to 'int', possible loss of data
-C:\Users\RUBIOPLANAALEJANDRO\Desktop\aa2_DungeonF\Dungeon\Combat.cpp(136,43): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
-C:\Users\RUBIOPLANAALEJANDRO\Desktop\aa2_DungeonF\Dungeon\Combat.cpp(143,38): warning C4244: '+=': conversion from 'double' to 'int', possible loss of data
-  GameOver.cpp
-  Main.cpp
-C:\Users\RUBIOPLANAALEJANDRO\Desktop\aa2_DungeonF\Dungeon\Main.cpp(8,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-  Generating Code...
-  Dungeon.vcxproj -> C:\Users\RUBIOPLANAALEJANDRO\Desktop\aa2_DungeonF\x64\Debug\Dungeon.exe
+﻿  GameOver.cpp
+  Dungeon.vcxproj -> C:\Users\ESPÍGOLMIGUELJUDITH\Desktop\aa2_DungeonF\x64\Debug\Dungeon.exe
