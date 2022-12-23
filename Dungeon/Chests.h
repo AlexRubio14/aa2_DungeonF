@@ -2,7 +2,6 @@
 #include "Map.h"
 #include "Player.h"
 
-
 struct Chest
 {
 	MapPosition position;
@@ -17,7 +16,6 @@ struct Chest
 	
 	void Init();
 };
-
 
 void CrearCofres(Player& link, Chest cofre[]);
 void OpenChest(Player& link, Chest cofre[], int& chestClosed);

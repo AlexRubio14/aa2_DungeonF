@@ -1,7 +1,7 @@
 //#include "Header.h"
 #include "Start.h"
 
-void Start () {
+void PrintStart () {
 	system("Color 0A");
 	printf(" ------------- THE LEGEND OF PLAYER -------------\n");
 	printf("        ____ \n");

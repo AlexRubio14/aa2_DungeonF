@@ -22,6 +22,16 @@ void Player::Init()
     isAlive = true;
 }
 
+void PrintPlayer() {
+    printf("------ COMBAT ------\n---- Player ----\n");
+    printf("      ____ \n");
+    printf("     |._. |  \n");
+    printf("     |  __|  \n");
+    printf(" <==|| |   | \n");
+    printf("     |_|___|  \n");
+    printf("     _|  _|  \n");
+}
+
 void DrinkPotion(Player& link) {
     link.health += link.maxHealth * 0.4;
     if (link.health > link.maxHealth) {

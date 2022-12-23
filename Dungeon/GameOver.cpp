@@ -1,4 +1,5 @@
 #include "Header.h"
+
 void PrintGameover(Player& link) {
 	system("cls");
 	if (link.isAlive)

@@ -1,5 +1,17 @@
 #include "Header.h"
 
+bool ChestFounded(Player& link, Chest cofre[], bool& chestFounded) {
+
+	for (int i = 0; i < 2; i++)
+	{
+		if (link.position.x == cofre[i].position.x && link.position.y == cofre[i].position.y)
+		{
+			cofre[i].position.x = 30;
+			chestFounded = true;
+		}
+	}
+	return chestFounded;
+}
 
 void Chest::Init() 
 {
@@ -131,4 +143,5 @@ void OpenChest(Player& link, Chest cofre[], int& chestClosed) {
 	InitLooting(link);
 	printf("\n---------------------------------------- \n");
 	system("pause");
+	system("cls");
 }

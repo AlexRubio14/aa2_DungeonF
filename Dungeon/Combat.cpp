@@ -210,57 +210,6 @@ int Barres(int primeraBarra, int segonaBarra) {
 	return 0;
 }
 
-void DrawEnemy(int draw)
-{
-	if (draw == 0)
-	{
-		printf("---- MiniRichard  ----\n");
-		printf("      ___  \n");
-		printf("     |o_o|  \n");
-		printf("    __|  |__ \n");
-		printf("   |  |__|  |\n");
-		printf("    _|    |_  \n\n");
-
-	}
-	else if (draw == 1)
-	{
-		printf(" ---- Radev'S Mug ----\n\n");
-		printf("   _|     | \n");
-		printf("  (_| T_T | \n");
-		printf("    |_____| \n\n");
-	}
-	else if (draw == 2)
-	{
-		printf("---- Suspicious Radev ----\n");
-		printf("      _v__ \n");
-		printf("     |-_- |  \n");
-		printf("     s|    |s \n");
-		printf("      |____|  \n");
-		printf("     _|    |_  \n\n");
-
-	}
-	else
-	{
-		printf("---- Creators ----\n");
-		printf("               ____  \n");
-		printf(" hi! ____     | 'w'|    \n");
-		printf("    | '3'|   ||    ||    \n");
-		printf("   '|____|'   |____|         \n");
-		printf("      L L       L L  \n\n");
-	}
-}
-
-void PrintPlayer() {
-	printf("----- COMBAT -----\n---- Player ----\n");
-	printf("      ____ \n");
-	printf("     |._. |  \n");
-	printf("     |  __|  \n");
-	printf(" <==|| |   | \n");
-	printf("     |_|___|  \n");
-	printf("     _|  _|  \n");
-
-}
-
 
 
 

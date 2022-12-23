@@ -4,6 +4,7 @@
 #include "Enemy.h"
 #include "Map.h"
 #include "Chests.h"
+#include "Random.h"
 #include "Start.h"
 #define MAX_POTIONS 3
 #define NUM_COLUMS 5

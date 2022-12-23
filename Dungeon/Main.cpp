@@ -11,7 +11,8 @@ int main()
 	
 	char action;
 	Player link; //Inicialitzem el jugador 
-
+	link.Init();
+	
 	int enemiesAlive = 5, chestClosed = NUM_COFRES; //Aquesta variable ens indicarà quants enemics queden vius
 	Enemy goblin[5]; //Crearem 5 enemics (el random de 5 i 7 enemics ens ha petat el cap)
 	for (int i = 0; i < 5; i++)
@@ -29,8 +30,7 @@ int main()
 		switch (currentScene)
 		{
 		case START:
-			Start(); 
-			link.Init();
+			PrintStart(); 
 			currentScene = NAVIGATION;
 			break;
 		case NAVIGATION:
@@ -39,20 +39,20 @@ int main()
 			PrintMap (link, goblin, cofre, enemiesAlive);
 			cin >> action;
 			MoveAction(action, link, goblin, cofre, enemiesAlive);
-		
+			
+			//SI ES TROBA AMB UN COFRE
 			ChestFounded(link, cofre, chestFounded);
-			EnemyFounded(link, goblin, goblinFounded);
 			if (chestFounded)
 				currentScene = LOOTING;
-			else if (goblinFounded)
-			{
+
+			//SI ES TROBA AMB UN ENEMIC
+			EnemyFounded(link, goblin, goblinFounded);
+			if (goblinFounded)
 				currentScene = COMBAT;
-				goblinFounded = false;
-			}
 			break;
 		case COMBAT:
-			system("cls");
 			PlayCombat(link, goblin[5]);
+			goblinFounded = false;
 			if (link.isAlive == true && goblin[5].isAlive == false)
 			{
 				currentScene = NAVIGATION;
@@ -62,7 +62,6 @@ int main()
 				currentScene = GAMEOVER;
 			break;
 		case LOOTING:
-			system("cls");
 			OpenChest(link,cofre, chestClosed);
 			chestFounded = false;
 			currentScene = NAVIGATION;
@@ -75,40 +74,5 @@ int main()
 		}
 	}
 	return 0;
-}
-
-int RandomNumber(int min, int max)
-{
-	return rand() % (max - min + 1) + min;
-}
-
-bool ChestFounded(Player& link, Chest cofre[], bool& chestFounded) {
-	
-	for (int i = 0; i < 2; i++)
-	{
-		if (link.position.x == cofre[i].position.x && link.position.y == cofre[i].position.y)
-		{
-			cofre[i].position.x = 30;
-			//link.moves
-			Scene currentScene = LOOTING;
-			chestFounded = true;
-		}
-	}
-	return chestFounded;
-}
-
-bool EnemyFounded(Player& link, Enemy goblin[], bool& goblinFounded) {
-
-	for (int i = 0; i < 5; i++)
-	{
-		if (link.position.x == goblin[i].position.x && link.position.y == goblin[i].position.y)
-		{
-			goblin[i].position.x = 30;
-			//link.moves
-			Scene currentScene = COMBAT;
-			goblinFounded = true;
-		}
-	}
-	return goblinFounded;
 }
 
