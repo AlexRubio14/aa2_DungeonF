@@ -42,6 +42,14 @@ void PrintMap(Player& link, Enemy goblin[], Chest cofre[], int& menosEnemy) {
 
 			//Comprovar que no es superposen els CHESTS amb altres elements //DECLARAR CHEST AL MAPA
 			for (int c = 0; c < 2; c++)	{
+				for (int k = 0; k < menosEnemy; k++)
+				{
+					if (cofre[k].position.x == link.position.x && cofre[k].position.y == link.position.y)
+					{
+						cofre[k].position.x = RandomNumber(0, 4);
+						cofre[k].position.y = RandomNumber(0, 4);
+					}
+				}
 				if (cofre[c].position.x == j && cofre[c].position.y == i)
 					chestFound = true;
 			}

@@ -52,12 +52,14 @@ void PlayCombat(Player& link, Enemy& goblin) {
 					goblin.stamina -= eAttack;
 					link.stamina -= pAttack;
 					printf("You strike the enemy with more force! The enemy receives %d damage\n", pAttack);
+					system("pause");
 				}
 				else if (eAttack > pAttack) { // attack del enemic mes grand que le del jugador
 					link.health -= eAttack;
 					goblin.stamina -= eAttack;
 					link.stamina -= pAttack;
 					printf("The enemy strikes you with more force! You receive %d damage\n", eAttack);
+					system("pause");
 				}
 
 			}
@@ -67,12 +69,14 @@ void PlayCombat(Player& link, Enemy& goblin) {
 				link.stamina -= pAttack;
 			//	pStaminaUsed = pAttack * 0.75;
 				printf("The enemy blocks your attack, receiving only %d damage\n", pAttack * 0.75);
+				system("pause");
 			}
 			else if (eAction == 'R') { // l'enemic descansa
 				goblin.stamina = goblin.maxStamina;
 				goblin.health -= pAttack;
 				link.stamina -= pAttack;
 				printf("You strike the unpreparaed enemy dealing %d damage\n", pAttack);
+				system("pause");
 			}
 			break;
 
@@ -84,18 +88,19 @@ void PlayCombat(Player& link, Enemy& goblin) {
 				goblin.stamina -= eAttack;
 		//		eStaminaUsed = (eAttack * 0.25) + 1;
 				printf("You defend the enemy blow, but receive %d damage\n", (eAttack * 0.25) + 1); // Quan passa aixo printa un 0 a la consola en el %d igual esta mal el calcul
-
+				system("pause");
 			}
 			else if (eAction == 'D') {
 				goblin.stamina +=  1 + goblin.stamina * 0.25;
 				link.stamina += link.stamina * 0.25;
 				printf("You both defend! ");
+				system("pause");
 			}
 			else if (eAction == 'R') {
 				goblin.stamina = goblin.maxStamina;
 				link.stamina += link.stamina * 0.25;
 				printf("You defend while the enemy cacthes a breath! It seems ready to strike! \n");
-
+				system("pause");
 			}
 			break;
 
@@ -106,18 +111,19 @@ void PlayCombat(Player& link, Enemy& goblin) {
 				goblin.stamina -= eAttack;
 				link.stamina = link.maxStamina;
 				printf("You rest when the enemy hits you, strriking for %d damage\n", eAttack);
-
+				system("pause");
 			}
 			else if (eAction == 'D') {
 				link.stamina = link.maxStamina;
 				goblin.stamina += goblin.stamina * 0.25;
-
 				printf("You rest while the enemy defend\n");
+				system("pause");
 			}
 			else if (eAction == 'R') {
 				link.stamina = link.maxStamina;
 				goblin.stamina = goblin.maxStamina;
 				printf("You both rest, gathering up for  clash\n");
+				system("pause");
 			}
 			break;
 
@@ -125,6 +131,7 @@ void PlayCombat(Player& link, Enemy& goblin) {
 		case 'p':
 			if (link.potions == 0) {
 				printf("You have no more potions, pobre de mierda\n ");
+				system("pause");
 				break;
 			}
 
@@ -135,6 +142,7 @@ void PlayCombat(Player& link, Enemy& goblin) {
 				
 				eStaminaUsed = (link.maxHealth * 0.4) - eAttack;
 				printf("You drink the potion when the enemy hits you, striking %d damage\n", eStaminaUsed);
+				system("pause");
 				break;
 
 			}
@@ -142,12 +150,14 @@ void PlayCombat(Player& link, Enemy& goblin) {
 				DrinkPotion(link);
 				goblin.stamina += goblin.stamina * 0.25;
 				printf("You drink the potion while the enemy defends\n");
+				system("pause");
 				break;
 			}
 			else if (eAction == 'R') {
 				DrinkPotion(link);
 				goblin.stamina = goblin.maxStamina;
 				printf("You drink the potion while the enemy rests\n");
+				system("pause");
 				break;
 			}
 		default:
@@ -170,7 +180,6 @@ void PlayCombat(Player& link, Enemy& goblin) {
 		if (goblin.stamina <= 0)
 			goblin.stamina = 1;
 	}
-	system("pause");
 	system("cls");
 }
 

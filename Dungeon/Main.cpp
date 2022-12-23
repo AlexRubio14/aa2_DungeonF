@@ -53,7 +53,6 @@ int main()
 		case COMBAT:
 			system("cls");
 			PlayCombat(link, goblin[5]);
-			system("Pause");
 			if (link.isAlive == true && goblin[5].isAlive == false)
 			{
 				currentScene = NAVIGATION;
@@ -69,8 +68,7 @@ int main()
 			currentScene = NAVIGATION;
 			break;
 		case GAMEOVER:
-			PrintGameover(link, isPlaying);
-			currentScene = START;
+			PrintGameover(link);
 			break;
 		default:
 			break;

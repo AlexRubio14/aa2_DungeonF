@@ -1,5 +1,5 @@
 #include "Header.h"
-void PrintGameover(Player& link, bool& isPlaying) {
+void PrintGameover(Player& link) {
 	system("cls");
 	if (link.isAlive)
 	{
@@ -25,7 +25,7 @@ void PrintGameover(Player& link, bool& isPlaying) {
 		printf("      |  |        _|  _|     \n\n");
 		cout << "You have LOST Eduina's heart! You're a LOSEEEER!\n" << endl;
 	}
-	link.isAlive = true;
+	printf("\n\n Created by Judit Espigol & Alex Rubio\n Thanks for playing it! <3");
 
 	system("pause");
 	system("cls");
