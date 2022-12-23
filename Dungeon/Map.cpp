@@ -125,13 +125,13 @@ void MoveAction(char action, Player& link, Enemy goblin[], Chest cofre[], int& m
 			if (link.position.y == 0)
 			{
 				cout << "You can't do this movement! " << endl;
-				system("pause");
+
 				system("cls");
 				break;
 			}
 			link.position.y = j - 1;
 			link.moves--;
-			system("pause");
+;
 			system("cls");
 			break;
 		case 'A':
@@ -139,13 +139,13 @@ void MoveAction(char action, Player& link, Enemy goblin[], Chest cofre[], int& m
 			if (link.position.x == 0)
 			{
 				cout << "You can't do this movement! " << endl;
-				system("pause");
+
 				system("cls");
 				break;
 			}
 			link.position.x = i - 1;
 			link.moves--;
-			system("pause");
+
 			system("cls");
 			break;
 		case 'D':
@@ -153,13 +153,12 @@ void MoveAction(char action, Player& link, Enemy goblin[], Chest cofre[], int& m
 			if (link.position.x == 4)
 			{
 				cout << "You can't do this movement! " << endl;
-				system("pause");
+
 				system("cls");
 				break;
 			}
 			link.position.x = i + 1;
 			link.moves--;
-			system("pause");
 			system("cls");
 			break;
 		case 'S':
@@ -167,13 +166,13 @@ void MoveAction(char action, Player& link, Enemy goblin[], Chest cofre[], int& m
 			if (link.position.y == 4)
 			{
 				cout << "You can't do this movement! " << endl;
-				system("pause");
+	
 				system("cls");
 				break;
 			}
 			link.position.y = j + 1;
 			link.moves--;
-			system("pause");
+
 			system("cls");
 			break;
 		case 'P':
@@ -185,7 +184,7 @@ void MoveAction(char action, Player& link, Enemy goblin[], Chest cofre[], int& m
 			break;
 		default: 
 			cout << "ERROR" << endl;
-			system("pause");
+
 			system("cls");
 			break;
 	}

@@ -11,14 +11,22 @@ void PlayCombat(Player& link, Enemy& goblin) {
 		system("cls");
 		PrintPlayer();
 
+		printf(" HP ");
 		Barres(link.health, link.maxHealth);
+		printf(" %d / %d \n", link.health, link.maxHealth);
+		printf(" ST ");
 		Barres(link.stamina, link.maxStamina);
+		printf(" %d / %d \n", link.stamina, link.maxStamina);
 
 		printf("\nPotions % d / 3\n-----------------------------\n", link.potions);
 		DrawEnemy(draw);
 
+		printf(" HP ");
 		Barres(goblin.health, goblin.maxHealth);
+		printf(" ?? / ?? \n");
+		printf(" ST ");
 		Barres(goblin.stamina, goblin.maxStamina);
+		printf(" ?? / ?? \n");
 
 		printf("-----------------------------\n\n A--> Attack\t D --> Defend\n R --> Rest\t P --> Potions \n\n Enter your action: ");
 
@@ -68,7 +76,7 @@ void PlayCombat(Player& link, Enemy& goblin) {
 				goblin.health -= pAttack * 0.75;
 				link.stamina -= pAttack;
 			//	pStaminaUsed = pAttack * 0.75;
-				printf("The enemy blocks your attack, receiving only %d damage\n", pAttack * 0.75);
+				printf("The enemy blocks your attack, receiving only %d damage\n", (pAttack * 0.75));
 				system("pause");
 			}
 			else if (eAction == 'R') { // l'enemic descansa
@@ -86,8 +94,8 @@ void PlayCombat(Player& link, Enemy& goblin) {
 				link.stamina += 1 + link.stamina * 0.25;
 				link.health -= (eAttack * 0.25);
 				goblin.stamina -= eAttack;
-		//		eStaminaUsed = (eAttack * 0.25) + 1;
-				printf("You defend the enemy blow, but receive %d damage\n", (eAttack * 0.25) + 1); // Quan passa aixo printa un 0 a la consola en el %d igual esta mal el calcul
+				int eStaminaUsed = (eAttack * 0.25) + 1;
+				printf("You defend the enemy blow, but receive %d damage\n", eStaminaUsed); // Quan passa aixo printa un 0 a la consola en el %d igual esta mal el calcul
 				system("pause");
 			}
 			else if (eAction == 'D') {
@@ -137,11 +145,12 @@ void PlayCombat(Player& link, Enemy& goblin) {
 
 			if (eAction == 'A') {
 				DrinkPotion(link);
+				int recoverPotion = link.health * 0.4;
 				link.health -= eAttack;
 				goblin.stamina -= eAttack;
 				
 				eStaminaUsed = (link.maxHealth * 0.4) - eAttack;
-				printf("You drink the potion when the enemy hits you, striking %d damage\n", eStaminaUsed);
+				printf("You drink the potion (+%d HP) when the enemy hits you, striking %d damage\n", recoverPotion, eStaminaUsed);
 				system("pause");
 				break;
 
@@ -187,11 +196,17 @@ int Barres(int primeraBarra, int segonaBarra) {
 	int digits;
 	digits = (primeraBarra * 10 / segonaBarra);
 	printf("[=");
-	for (int d = digits; d > 1; d--)
-		printf("=");
-	for (int d = digits; d < 9; d++)
-		printf(" ");
-	printf("] %d / %d\n", primeraBarra, segonaBarra);
+	if (digits == 0)
+		printf("         ]");
+	else
+	{
+		for (int d = digits; d > 1; d--)
+			printf("=");
+		for (int d = digits; d < 10; d++)
+			printf(" ");
+		printf("]");
+	}
+	
 	return 0;
 }
 

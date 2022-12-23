@@ -25,7 +25,7 @@ void PrintGameover(Player& link) {
 		printf("      |  |        _|  _|     \n\n");
 		cout << "You have LOST Eduina's heart! You're a LOSEEEER!\n" << endl;
 	}
-	printf("\n\n Created by Judit Espigol & Alex Rubio\n Thanks for playing it! <3");
+	printf("Created by Judit Espigol & Alex Rubio\nThanks for playing it! <3\n\n");
 
 	system("pause");
 	system("cls");
