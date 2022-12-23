@@ -9,4 +9,3 @@ using namespace std;
 int Barres(int primeraBarra, int segonaBarra);
 void DrawEnemy(int draw);
 void PlayCombat(Player& link, Enemy& goblin);
-void PrintPlayer();

@@ -102,7 +102,7 @@ void InitLooting(Player& link)
 	}
 }
 
-//Aquesta funció comprova que els cofres no es col·loquin sobre el jugador //Inicialitzat al main.cpp
+//Aquesta funció comprova que els cofres no es col·loquin sobre el jugador
 void CrearCofres(Player& link, Chest cofre[]) {
 	for (int c = 0; c < NUM_COFRES; c++)
 	{

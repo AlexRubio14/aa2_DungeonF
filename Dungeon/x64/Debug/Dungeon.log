@@ -1,1 +1,8 @@
-﻿  Dungeon.vcxproj -> C:\Users\ESPÍGOLMIGUELJUDITH\Desktop\aa2_DungeonF\x64\Debug\Dungeon.exe
+﻿  Enemy.cpp
+  Looting.cpp
+  GameOver.cpp
+  Main.cpp
+C:\Users\ESPÍGOLMIGUELJUDITH\Desktop\aa2_DungeonF\Dungeon\Main.cpp(8,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+  Map.cpp
+  Generating Code...
+  Dungeon.vcxproj -> C:\Users\ESPÍGOLMIGUELJUDITH\Desktop\aa2_DungeonF\x64\Debug\Dungeon.exe

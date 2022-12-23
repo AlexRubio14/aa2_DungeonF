@@ -24,3 +24,5 @@ struct Player
 };
 
 void DrinkPotion(Player& link);
+
+void PrintPlayer();

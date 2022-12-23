@@ -24,12 +24,12 @@ void Player::Init()
 
 void PrintPlayer() {
     printf("------ COMBAT ------\n---- Player ----\n");
-    printf("      ____ \n");
-    printf("     |._. |  \n");
-    printf("     |  __|  \n");
-    printf(" <==|| |   | \n");
-    printf("     |_|___|  \n");
-    printf("     _|  _|  \n");
+    printf("       ____ \n");
+    printf("      |._. |  \n");
+    printf("      |  __|  \n");
+    printf("  <==|| |   | \n");
+    printf("      |_|___|  \n");
+    printf("      _|  _|  \n\n");
 }
 
 void DrinkPotion(Player& link) {
@@ -38,9 +38,10 @@ void DrinkPotion(Player& link) {
         link.health = link.maxHealth;
     }
     link.potions--;
+    //SI NO TIENES POTIONS
     if (link.potions <= 0)
     {
-        printf("You have no potions!");
+        printf("You have NO potions!");
         link.potions = 0;
     }
 }

@@ -141,7 +141,9 @@
     <ClInclude Include="Chests.h" />
     <ClInclude Include="Combat.h" />
     <ClInclude Include="Enemy.h" />
+    <ClInclude Include="GameOver.h" />
     <ClInclude Include="Header.h" />
+    <ClInclude Include="Looting.h" />
     <ClInclude Include="Map.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="Random.h" />

@@ -5,3 +5,4 @@ struct MapPosition {
     int x;
     int y;
 };
+
